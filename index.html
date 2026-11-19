@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Portal | Aditya Singh Chandel</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #101828, #172554, #312e81);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: white;
+    overflow: hidden;
+}
+
+/* Background effects */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.35;
+    z-index: 0;
+}
+
+body::before {
+    background: #38bdf8;
+    top: -80px;
+    left: -60px;
+}
+
+body::after {
+    background: #a855f7;
+    bottom: -100px;
+    right: -70px;
+}
+
+/* Main container */
+.container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 430px;
+    padding: 40px 25px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 28px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: appear 0.8s ease;
+}
+
+/* Name */
+.name {
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    background: linear-gradient(90deg, #ffffff, #93c5fd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    color: #cbd5e1;
+    font-size: 14px;
+    margin-bottom: 35px;
+}
+
+/* Buttons */
+.subject-btn {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    margin: 17px 0;
+    border: none;
+    border-radius: 16px;
+    font-size: 17px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.chemistry {
+    background: linear-gradient(135deg, #06b6d4, #2563eb);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+}
+
+.physics {
+    background: linear-gradient(135deg, #8b5cf6, #d946ef);
+    box-shadow: 0 8px 25px rgba(168, 85, 247, 0.3);
+}
+
+.subject-btn:hover {
+    transform: translateY(-4px) scale(1.02);
+    filter: brightness(1.12);
+}
+
+.subject-btn:active {
+    transform: scale(0.97);
+}
+
+/* Footer */
+.footer {
+    margin-top: 35px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    font-size: 12px;
+    color: #94a3b8;
+    letter-spacing: 1px;
+}
+
+.footer span {
+    color: #e2e8f0;
+    font-weight: 600;
+}
+
+/* Animation */
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 32px 20px;
+    }
+
+    .name {
+        font-size: 21px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1 class="name">Aditya Singh Chandel</h1>
+
+    <p class="subtitle">Select Your Subject</p>
+
+    <button class="subject-btn chemistry" onclick="openSubject('chem1.html')">
+        🧪 Chemistry
+    </button>
+
+    <button class="subject-btn physics" onclick="openSubject('phy1.html')">
+        ⚡ Physics
+    </button>
+
+    <div class="footer">
+        Crafted by <span>DestiQora</span>
+    </div>
+
+</div>
+
+<script>
+function openSubject(page) {
+    window.location.href = page;
+}
+</script>
+
+</body>
+</html>
